@@ -11,7 +11,7 @@ public class SceneSwitch : MonoBehaviour
     	
     	chance=Random.Range(1,100);
     	Debug.Log("Collided!" + chance);
-    	if(chance<5){
+    	if(chance<4){
     		SceneManager.LoadScene(1);
     	}
     	
