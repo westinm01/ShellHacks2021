@@ -9,6 +9,8 @@ public class CaravanMove : MonoBehaviour
     Vector3 startPos;
     Vector3 endPos;
     float t;
+   	bool currentDir;
+    private SpriteRenderer sr;
     public float walkSpeed = 3f;
 	/*public float movementSpeed=8;
 	public float JumpForce=6;
@@ -19,9 +21,9 @@ public class CaravanMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*_rigidbody = GetComponent<Rigidbody2D>();
+        //_rigidbody = GetComponent<Rigidbody2D>();
        
-        sr=GetComponent<SpriteRenderer>();*/
+        sr=GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -38,6 +40,16 @@ public class CaravanMove : MonoBehaviour
             }
             
             if(input!=Vector2.zero){
+                if(input.x < 0)
+                {
+                	sr.flipX=false;
+                    currentDir = false;
+                }
+                if(input.x > 0)
+                {
+                	sr.flipX=true;
+                    currentDir = true;
+                }
             	StartCoroutine(Move(transform));
         	}
         }
