@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 03dc98d2a9ce2074abc6a6b52b0c4b20
+  - enabled: 1
+    path: Assets/Scenes/Battle_Grass.unity
+    guid: 925125fcc8715a24f945e905179dfca1
   m_configObjects: {}
