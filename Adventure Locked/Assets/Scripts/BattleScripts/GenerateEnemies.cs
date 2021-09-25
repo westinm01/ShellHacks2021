@@ -8,14 +8,19 @@ public class GenerateEnemies : MonoBehaviour
 	public GameObject Lizard;
 	public GameObject Eye;
 	public GameObject Ghost;
+	public GameObject Plant;
+	private float maxLevel;
     // Start is called before the first frame update
     void Start()
     {
+    	maxLevel=1;
         enemyNum=Random.Range(1,6);
         Debug.Log(enemyNum);
         for(float i =0; i<enemyNum;i++){
         	GenerateEnemy(i);
         }
+        //After this generation, then fill in each enemy's stats
+
     }
 
     // Update is called once per frame
@@ -42,18 +47,23 @@ public class GenerateEnemies : MonoBehaviour
     			pos=new Vector3(6f,-4f,0f);
     			break;
     	}
-    	float enemy=Random.Range(1,4);
+    	float enemy=Random.Range(1,5); //chooses the specific enemy type
+    	GameObject en;
     	switch (enemy){
     		case 1:
-    			Instantiate(Eye, pos, Quaternion.identity);
+    			en=Instantiate(Eye, pos, Quaternion.identity);
     			break;
     		case 2:
-    			Instantiate(Ghost, pos, Quaternion.identity);
+    			en=Instantiate(Ghost, pos, Quaternion.identity);
     			break;
     		case 3:
-    			Instantiate(Lizard, pos, Quaternion.identity);
+    			en=Instantiate(Lizard, pos, Quaternion.identity);
+    			break;
+    		default:
+    			en=Instantiate(Plant, pos, Quaternion.identity);
     			break;
     	}
-    	
+    	Enemy enemyScript=en.GetComponent<Enemy>();//This gets the script
+    	enemyScript.setLevel(maxLevel);
     }
 }

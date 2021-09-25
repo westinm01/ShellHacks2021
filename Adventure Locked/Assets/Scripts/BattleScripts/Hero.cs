@@ -6,6 +6,7 @@ public class Hero : MonoBehaviour
 {
     // Start is called before the first frame update
     public float health;
+    public float currHealth;
     public float level;
     public float healthInc;
     public float damage;
