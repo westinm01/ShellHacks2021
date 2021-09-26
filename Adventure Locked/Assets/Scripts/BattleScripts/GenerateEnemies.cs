@@ -10,13 +10,16 @@ public class GenerateEnemies : MonoBehaviour
 	public GameObject Ghost;
 	public GameObject Plant;
 	public GameObject Mole;
+	public GameObject [] enemies;
 	private float maxLevel;
+	private int index;
     // Start is called before the first frame update
     void Start()
     {
-    	
+    	index=0;
     	maxLevel=findMaxLevel();
         enemyNum=Random.Range(1,6);
+        enemies = new GameObject [(int)enemyNum];
         Debug.Log(enemyNum);
         for(float i =0; i<enemyNum;i++){
         	GenerateEnemy(i);
@@ -70,6 +73,8 @@ public class GenerateEnemies : MonoBehaviour
     	}
     	Enemy enemyScript=en.GetComponent<Enemy>();//This gets the script
     	enemyScript.setLevel(maxLevel);
+    	enemies[index]=en;
+    	index++;
     }
     public float findMaxLevel(){
     	GameObject n = GameObject.FindGameObjectWithTag("Nate");
