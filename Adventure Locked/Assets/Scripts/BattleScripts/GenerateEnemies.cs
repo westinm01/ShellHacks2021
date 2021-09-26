@@ -9,6 +9,7 @@ public class GenerateEnemies : MonoBehaviour
 	public GameObject Eye;
 	public GameObject Ghost;
 	public GameObject Plant;
+	public GameObject Mole;
 	private float maxLevel;
     // Start is called before the first frame update
     void Start()
@@ -47,7 +48,7 @@ public class GenerateEnemies : MonoBehaviour
     			pos=new Vector3(6f,-4f,0f);
     			break;
     	}
-    	float enemy=Random.Range(1,5); //chooses the specific enemy type
+    	float enemy=Random.Range(1,6); //chooses the specific enemy type
     	GameObject en;
     	switch (enemy){
     		case 1:
@@ -59,6 +60,9 @@ public class GenerateEnemies : MonoBehaviour
     		case 3:
     			en=Instantiate(Lizard, pos, Quaternion.identity);
     			break;
+    		case 4:
+    			en=Instantiate(Mole, pos, Quaternion.identity);
+    		break;
     		default:
     			en=Instantiate(Plant, pos, Quaternion.identity);
     			break;

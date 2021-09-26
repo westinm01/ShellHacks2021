@@ -12,6 +12,7 @@ TagManager:
   - Ghost
   - Lizard
   - Plant
+  - Caravan
   layers:
   - Default
   - TransparentFX
