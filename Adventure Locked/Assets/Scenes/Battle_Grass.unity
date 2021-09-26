@@ -986,6 +986,7 @@ GameObject:
   - component: {fileID: 1321500579}
   - component: {fileID: 1321500578}
   - component: {fileID: 1321500580}
+  - component: {fileID: 1321500581}
   m_Layer: 0
   m_Name: Battle
   m_TagString: Untagged
@@ -1038,6 +1039,24 @@ MonoBehaviour:
   Plant: {fileID: 168148422}
   Mole: {fileID: 1505839506}
   enemies: []
+--- !u!114 &1321500581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1321500577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87d496aff8bf6154b9741916e6241ad3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroes: []
+  nate: {fileID: 14311679}
+  kris: {fileID: 447232714}
+  clyde: {fileID: 1688065307}
+  silver: {fileID: 1927065130}
+  finger: {fileID: 1321500577}
 --- !u!1 &1505839506
 GameObject:
   m_ObjectHideFlags: 0

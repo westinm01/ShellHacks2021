@@ -33,7 +33,10 @@ public class Hero : MonoBehaviour
     }
 
     public void Attack(GameObject enemy){
-
+    	enemy.GetComponent<Enemy>().currHealth=currHealth-damage;
+    	if(enemy.GetComponent<Enemy>().currHealth<=0){
+    		enemy.GetComponent<Renderer>().enabled=false;
+    	}
     }
     public void SaveHero(){
     	SaveSystem.SaveHero(this);
