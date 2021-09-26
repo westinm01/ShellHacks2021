@@ -19,6 +19,7 @@ public class TurnChooser : MonoBehaviour
         choosing=true;
         battleDone=false;
         heroes = new Hero[4];
+        //finger.GetComponent<SpriteRenderer>().enabled=false;
         heroes[0]=nate.GetComponent<Hero>();
         heroes[1]=kris.GetComponent<Hero>();
         heroes[2]=clyde.GetComponent<Hero>();
@@ -29,6 +30,8 @@ public class TurnChooser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+    	
         if(battleDone){
         	BGG2OWG b= GetComponent<BGG2OWG>();
         	b.LoadOW();
@@ -57,13 +60,15 @@ public class TurnChooser : MonoBehaviour
     	}*/
     	//move pointer to first enemy
     	choosing=true;
-    	while(choosing){
-    		if(Input.GetKey("enter")){
+    	//while(choosing){
+    	waitForKeyPress(KeyCode.Tab);
+    	if(Input.GetKeyDown("enter")){
     			choosing=false;
     			Debug.Log("CHOSEN");
     			//this locks in the enemy chosen by pointer
     		}
-    	}
+    	//}
+    	finger.GetComponent<Point>().Start();
     	GameObject enemyObject = finger.GetComponent<Point>().target;
     	Enemy enemy=enemyObject.GetComponent<Enemy>();
     	hero.Attack(enemyObject);
@@ -72,4 +77,17 @@ public class TurnChooser : MonoBehaviour
     	//hero.Attack(enemy);
 
     }
+
+    private IEnumerator waitForKeyPress(KeyCode key)
+{
+    bool done = false;
+    while(!done) // essentially a "while true", but with a bool to break out naturally
+    {
+        if(Input.GetKeyDown(key))
+        {
+            done = true; // breaks the loop
+        }
+        yield return null; // wait until next frame, then continue execution from here (loop continues)
+    }
+}
 }

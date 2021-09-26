@@ -12,6 +12,7 @@ public class Hero : MonoBehaviour
     public float damage;
     public float damageInc;
     public string firstName;
+    
 
     void Start()
     {
@@ -33,7 +34,7 @@ public class Hero : MonoBehaviour
     }
 
     public void Attack(GameObject enemy){
-    	enemy.GetComponent<Enemy>().currHealth=currHealth-damage;
+    	enemy.GetComponent<Enemy>().currHealth=enemy.GetComponent<Enemy>().currHealth-damage;
     	if(enemy.GetComponent<Enemy>().currHealth<=0){
     		enemy.GetComponent<Renderer>().enabled=false;
     	}

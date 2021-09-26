@@ -9,7 +9,7 @@ public class Point : MonoBehaviour
     public GameObject battle;
     private int index;
     private Transform myTransform;
-    void Start()
+    public void Start()
     {
         //Assign battle by tag.
         GenerateEnemies t = battle.GetComponent<GenerateEnemies>();
