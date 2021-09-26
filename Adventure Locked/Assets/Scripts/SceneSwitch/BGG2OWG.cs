@@ -22,6 +22,12 @@ public class BGG2OWG : MonoBehaviour
         }
     }
 
+    public void LoadOW(){
+    	saveHeroData();
+    	SceneManager.LoadScene(0);
+        
+    }
+
     public void saveHeroData(){
     	//need to get heroes by tag and save each one
     	GameObject n = GameObject.FindGameObjectWithTag("Nate");
