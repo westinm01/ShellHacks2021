@@ -14,7 +14,8 @@ public class GenerateEnemies : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-    	maxLevel=1;
+    	
+    	maxLevel=findMaxLevel();
         enemyNum=Random.Range(1,6);
         Debug.Log(enemyNum);
         for(float i =0; i<enemyNum;i++){
@@ -69,5 +70,30 @@ public class GenerateEnemies : MonoBehaviour
     	}
     	Enemy enemyScript=en.GetComponent<Enemy>();//This gets the script
     	enemyScript.setLevel(maxLevel);
+    }
+    public float findMaxLevel(){
+    	GameObject n = GameObject.FindGameObjectWithTag("Nate");
+    	GameObject s = GameObject.FindGameObjectWithTag("Silver");
+    	GameObject c = GameObject.FindGameObjectWithTag("Clyde");
+    	GameObject k = GameObject.FindGameObjectWithTag("Kris");
+    	Hero nate = n.GetComponent<Hero>();
+    	Hero silver = s.GetComponent<Hero>();
+    	Hero clyde = c.GetComponent<Hero>();
+    	Hero kris = k.GetComponent<Hero>();
+    	float nateL=nate.level;
+    	float silverL=silver.level;
+    	float clydeL= clyde.level;
+    	float krisL = kris.level;
+    	float maxL=nateL;
+    	if(silverL>maxL){
+    		maxL=silverL;
+    	}
+    	if(clydeL>maxL){
+    		maxL=clydeL;
+    	}
+    	if(krisL>maxL){
+    		maxL=krisL;
+    	}
+    	return maxL;
     }
 }

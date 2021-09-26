@@ -16,7 +16,8 @@ public class Hero : MonoBehaviour
     void Start()
     {
         LoadHero();
-        
+        //level=1f;
+
     }
 
     // Update is called once per frame

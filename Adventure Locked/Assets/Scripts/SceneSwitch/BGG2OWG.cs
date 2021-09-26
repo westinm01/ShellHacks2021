@@ -14,10 +14,11 @@ public class BGG2OWG : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-    	saveHeroData();
+    	
 
         if(Input.GetKey(KeyCode.Space)){
         	SceneManager.LoadScene(0);
+        	saveHeroData();
         }
     }
 
@@ -31,6 +32,10 @@ public class BGG2OWG : MonoBehaviour
     	Hero silver = s.GetComponent<Hero>();
     	Hero clyde = c.GetComponent<Hero>();
     	Hero kris = k.GetComponent<Hero>();
+    	nate.LevelUp();
+    	silver.LevelUp();
+    	clyde.LevelUp();
+    	kris.LevelUp();
     	nate.SaveHero();
     	silver.SaveHero();
     	clyde.SaveHero();
