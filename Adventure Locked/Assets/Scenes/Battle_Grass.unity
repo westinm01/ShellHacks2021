@@ -207,9 +207,10 @@ MonoBehaviour:
   health: 0
   currHealth: 0
   level: 0
-  healthInc: 0
+  healthInc: 1
   damage: 0
-  damageInc: 0
+  damageInc: 2
+  firstName: Nate
 --- !u!1 &168148422
 GameObject:
   m_ObjectHideFlags: 0
@@ -480,9 +481,10 @@ MonoBehaviour:
   health: 0
   currHealth: 0
   level: 0
-  healthInc: 0
+  healthInc: 1
   damage: 0
-  damageInc: 0
+  damageInc: 2
+  firstName: Kris
 --- !u!1 &1076811314
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,9 +1125,10 @@ MonoBehaviour:
   health: 0
   currHealth: 0
   level: 0
-  healthInc: 0
+  healthInc: 2
   damage: 0
-  damageInc: 0
+  damageInc: 1
+  firstName: Clyde
 --- !u!1 &1909552772
 GameObject:
   m_ObjectHideFlags: 0
@@ -1300,9 +1303,10 @@ MonoBehaviour:
   health: 0
   currHealth: 0
   level: 0
-  healthInc: 0
+  healthInc: 2
   damage: 0
-  damageInc: 0
+  damageInc: 1
+  firstName: Silver
 --- !u!1 &1987737466
 GameObject:
   m_ObjectHideFlags: 0

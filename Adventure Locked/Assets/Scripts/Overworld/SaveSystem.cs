@@ -36,4 +36,38 @@ public static class SaveSystem
     	}
 
     }
+
+
+    //Hero stuff below
+
+    public static void SaveHero(Hero hero){
+    	BinaryFormatter formatter = new BinaryFormatter();
+    	string path = Application.persistentDataPath + "/"+hero.firstName+".two";
+    	FileStream stream = new FileStream(path, FileMode.Create);
+
+    	HeroData data = new HeroData(hero);
+    	formatter.Serialize(stream,data);
+    	stream.Close();
+    }
+
+    public static HeroData LoadHero(Hero hero){
+    	string path = Application.persistentDataPath + "/"+hero.firstName+".two";
+    	if(File.Exists(path)){
+    		Debug.Log("Hero Loading");
+    		BinaryFormatter formatter = new BinaryFormatter();
+    		FileStream stream = new FileStream(path, FileMode.Open);
+
+    		HeroData data= formatter.Deserialize(stream) as HeroData;
+
+    		stream.Close();
+
+    		return data;
+
+    	}
+    	else{
+    		Debug.LogError("Save file not found in " + path);
+    		return null;
+    	}
+
+    }
 }

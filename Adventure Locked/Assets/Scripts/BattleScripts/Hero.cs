@@ -11,9 +11,11 @@ public class Hero : MonoBehaviour
     public float healthInc;
     public float damage;
     public float damageInc;
+    public string firstName;
 
     void Start()
     {
+        LoadHero();
         
     }
 
@@ -31,5 +33,19 @@ public class Hero : MonoBehaviour
 
     public void Attack(GameObject enemy){
 
+    }
+    public void SaveHero(){
+    	SaveSystem.SaveHero(this);
+    }
+    public void LoadHero(){
+    	HeroData data=SaveSystem.LoadHero(this);
+    	if(data==null){
+    		level=1;
+
+    	}
+    	damage=data.damage;
+    	level=data.level;
+    	health=data.health;
+    	currHealth=data.currHealth;
     }
 }
